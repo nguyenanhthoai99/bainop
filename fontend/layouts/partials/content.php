@@ -355,7 +355,7 @@ OTE;
                                     <span class="gia-sp-giam ">
                                         <del>
                                             <?php
-                                            if ($item['sp_giacu'] != 0)
+                                           if ((($item['sp_giacu'] != null) && ($item['sp_giacu'] > $item['sp_gia'])))
                                                 echo number_format($item['sp_giacu'], 0, ".", ",") . ' vnđ';
                                             ?>
                                         </del>
@@ -424,7 +424,7 @@ OTE;
                                     <span class="gia-sp-giam ">
                                         <del>
                                             <?php
-                                            if ($item['sp_giacu'] != 0)
+                                             if ((($item['sp_giacu'] != null) && ($item['sp_giacu'] > $item['sp_gia'])))
                                                 echo number_format($item['sp_giacu'], 0, ".", ",") . ' vnđ';
                                             ?>
                                         </del>
@@ -484,7 +484,7 @@ OTE;
                                         <span class="gia-sp-giam ">
                                             <del>
                                                 <?php
-                                                if ($item['sp_giacu'] != 0)
+                                                if ((($item['sp_giacu'] != null) && ($item['sp_giacu'] > $item['sp_gia'])))
                                                     echo number_format($item['sp_giacu'], 0, ".", ",") . ' vnđ';
                                                 ?>
                                             </del>
@@ -545,7 +545,7 @@ OTE;
                                             <span class="gia-sp-giam ">
                                                 <del>
                                                     <?php
-                                                    if ($item['sp_giacu'] != 0)
+                                                   if ((($item['sp_giacu'] != null) && ($item['sp_giacu'] > $item['sp_gia'])))
                                                         echo number_format($item['sp_giacu'], 0, ".", ",") . ' vnđ';
                                                     ?>
                                                 </del>

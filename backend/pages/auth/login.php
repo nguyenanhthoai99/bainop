@@ -113,23 +113,9 @@
                 $kh_ghiNhoDangNhap = $_POST['ghiNhoDangNhap'];
                 if ($kh_tendangnhap == "") {
                     $loi .= "Tên đăng nhập hoặc mật khẩu không chính xác!<br>";
-                    // } else {
-                    //     if (strlen($kh_tendangnhap) < 5) {
-                    //         $loi .= "Tên đăng nhập không được ít hơn 5 ký tự!!<br>";
-                    //     }
-                    //     if (strlen($kh_tendangnhap) > 20) {
-                    //         $loi .= "Tên đăng nhập không được vượt quá 20 ký tự!<br>";
-                    //     }
+                 
                 }
 
-                // if ($kh_matkhau == "") {
-                //     $loi .= "Mật khẩu không được để trống!<br>";
-                // } else {
-
-                //     if (strlen($kh_matkhau) > 20) {
-                //         $loi .= "Mật khẩu không được vượt quá 20 ký tự!<br>";
-                //     }
-                // }
 
                 if ($loi != "") {
                     echo '<script type="text/javascript">hienThongBaoLoi("' . $loi . '");</script>';
@@ -153,7 +139,7 @@ EOT;
                     showDebug("Đăng nhập thành công");
                     $_SESSION['kh_tendangnhap_logged'] = $kh_tendangnhap;
                     $_SESSION['ghiNhoDangNhap_logged'] = $kh_ghiNhoDangNhap;
-                    showDebug($_SESSION['ghiNhoDangNhap_logged']);
+                    // showDebug($_SESSION['ghiNhoDangNhap_logged']);
                     $_SESSION['kh_ten'] = $data[0]["kh_ten"];
 
                     if (isset($_POST["ghiNhoDangNhap"]) && $_POST["ghiNhoDangNhap"] != null) {

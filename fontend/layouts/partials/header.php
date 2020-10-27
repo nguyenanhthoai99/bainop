@@ -7,8 +7,8 @@ if (session_id() === '') {
 include_once(__DIR__ . '/../../../dbconnect.php');
 
 
-if (isset($_COOKIE["kh_tendangnhap_logged"])){
-    $_SESSION['kh_tendangnhap_logged'] = $_COOKIE["kh_tendangnhap_logged"] ;
+if (isset($_COOKIE["kh_tendangnhap_logged"])) {
+    $_SESSION['kh_tendangnhap_logged'] = $_COOKIE["kh_tendangnhap_logged"];
 }
 
 if (isset($_SESSION['kh_tendangnhap_logged'])) {
@@ -38,6 +38,7 @@ if (isset($_SESSION['kh_tendangnhap_logged'])) {
     <meta name="keywords " content="Vesper Nguyễn, vespernguyen, vesper nguyễn, Điện Thoại Giá Rẻ, dienthoaigiare, điện thoại giá rẻ, dtdd, smartphone,laptop,tablet">
     <link rel="icon" href="/nguyenanhthoai/fontend/images/icon/icon.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="/nguyenanhthoai/fontend/images/icon/icon.jpg" type="image/jpg" sizes="32x32">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .ten-menu a {
             text-align: center;
@@ -69,6 +70,22 @@ if (isset($_SESSION['kh_tendangnhap_logged'])) {
         .icon-shop {
             color: white;
             font-size: 48px;
+        }
+
+        .giohang {
+            position: relative;
+        }
+
+        .sohanghoa {
+            position: absolute;
+            top: 1px;
+            left: -4px;
+            color: white;
+            background-color: red;
+            border-radius: 50%;
+            width: 20px;
+            font-size: 10px;
+            text-align: center;
         }
     </style>
 </head>
@@ -114,8 +131,20 @@ if (isset($_SESSION['kh_tendangnhap_logged'])) {
                 </form>
                 <!-- menu ngang bên phải -->
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link nav-dangnhap" href="# "><i class="fa fa-shopping-cart" aria-hidden="true"></i>Giỏ Hàng</a>
+                    <li class="nav-item giohang">
+                        <a class="nav-link nav-dangnhap" href="/nguyenanhthoai/fontend/pages/card.php">
+                            <i class="fa fa-shopping-cart " aria-hidden="true"></i>Giỏ Hàng
+                        </a>
+                        <span class="sohanghoa">
+                            <?php
+                            if (isset($_SESSION['giohang'])) {
+                                $giohang = $_SESSION['giohang'];
+                                if ($giohang != null) {
+                                    echo count($giohang);
+                                }
+                            }
+                            ?>
+                        </span>
                     </li>
                     <?php
 
@@ -152,6 +181,8 @@ if (isset($_SESSION['kh_tendangnhap_logged'])) {
                                     <a class="dropdown-item" href="/nguyenanhthoai/backend/functions/laptop/index.php">Thêm Laptop</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/nguyenanhthoai/backend/functions/tablet/index.php">Thêm Tablet</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/nguyenanhthoai/backend/functions/donhang/index.php">Đơn Hàng</a>
                                 </div>
                             </li>
 

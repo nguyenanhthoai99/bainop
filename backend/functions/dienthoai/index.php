@@ -93,8 +93,7 @@ OTE;
                             <a href="edit.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-warning btnSua">
                                 Sửa
                             </a>
-                            <button onclick="deleteSanPham(<?= $data['sp_ma'] ?>)" class="btn btn-danger btnDelete" data-sp_ma="<?= $data['sp_ma'] ?>">Xóa</button>
-                            
+                            <button onclick="deleteSanPham(<?= $data['sp_ma'] ?>)" class="btn btn-danger btnDelete" data-sp_ma="<?= $data['sp_ma'] ?>">Xóa</button>                        
                         </td>
                     </tr>
                 <?php endforeach; ?>

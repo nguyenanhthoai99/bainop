@@ -112,7 +112,7 @@ if (isset($_SESSION['kh_tendangnhap_logged'])) {
                 <!-- menu ngang bên phải -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link nav-dangnhap" href="# ">
+                        <a class="nav-link nav-dangnhap" href="/nguyenanhthoai/fontend/pages/card.php">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>Giỏ Hàng
                         </a>
                     </li>

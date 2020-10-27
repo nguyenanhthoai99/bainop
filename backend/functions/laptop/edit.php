@@ -229,7 +229,7 @@ if (session_id() === '') {
                     <button class="btn btn-primary btn-lg btn-block" name="btnSave">Lưu dữ liệu</button>
                 </div>
                 <div class="col-md-7 text-right">
-                    <a href="index.php"><button type="button" class="btn btn-link">Quay Về</button></a>
+                    <a href="index.php"><button type="button" class="btn btn-info btn-md">Quay Về</button></a>
                 </div>
             </div>
         </form>
@@ -240,24 +240,22 @@ if (session_id() === '') {
             if ($loi) {
                 return;
             }
-            // if()
-            $sp_ten = $_POST["sp_ten"];
-            $sp_giacu = $_POST["sp_giacu"];
-            $sp_gia = $_POST["sp_gia"];
-            $sp_ngaycapnhat = $_POST["sp_ngaycapnhat"];
-            $sp_soluong = $_POST["sp_soluong"];
-            $nsx_ma = $_POST["nsx_ma"];
-            $km_ma = $_POST["km_ma"];
-            $laptop_cpu = $_POST["laptop_cpu"];
-            $laptop_ram = $_POST["laptop_ram"];
-            $laptop_ocung = $_POST["laptop_ocung"];
-            $laptop_manhinh = $_POST["laptop_manhinh"];
-            $laptop_cardmanhinh = $_POST["laptop_cardmanhinh"];
-            $laptop_congketnoi = $_POST["laptop_congketnoi"];
-            $laptop_hedieuhanh = $_POST["laptop_hedieuhanh"];
-            $laptop_thietke = $_POST["laptop_thietke"];
-            $laptop_kichthuoc = $_POST["laptop_kichthuoc"];
-            $laptop_ramat = $_POST["laptop_ramat"];
+
+            $sp_ten = htmlentities($_POST["sp_ten"]);
+            $sp_giacu = htmlentities($_POST["sp_giacu"]);
+            $sp_gia = htmlentities($_POST["sp_gia"]);
+            $sp_soluong = htmlentities($_POST["sp_soluong"]); 
+            $laptop_cpu = htmlentities($_POST["laptop_cpu"]);
+            $laptop_ram = htmlentities($_POST["laptop_ram"]);
+            $laptop_ocung = htmlentities($_POST["laptop_ocung"]);
+            $laptop_manhinh = htmlentities($_POST["laptop_manhinh"]);
+            $laptop_cardmanhinh = htmlentities($_POST["laptop_cardmanhinh"]);
+            $laptop_congketnoi = htmlentities($_POST["laptop_congketnoi"]);
+            $laptop_hedieuhanh = htmlentities($_POST["laptop_hedieuhanh"]);
+            $laptop_thietke = htmlentities($_POST["laptop_thietke"]);
+            $laptop_kichthuoc = htmlentities($_POST["laptop_kichthuoc"]);
+            $laptop_ramat = htmlentities($_POST["laptop_ramat"]);
+        
             if (isset($_FILES['sp_hinh'])) {
                 $upload_dir_sp_hinh = __DIR__ . "/../../../fontend/images/laptop/";
                 if ($_FILES['sp_hinh']['name'] == null) {

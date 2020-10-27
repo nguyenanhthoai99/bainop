@@ -120,125 +120,160 @@ $data = $dataSanPhamHot[0];
 <body>
     <?php include_once(__DIR__ . '/../layouts/partials/header.php') ?>
     <div class="container-fluid mt-3 main-sp">
-        <div class="row main-sanpham">
-            <!-- hình sản phẩm -->
-            <div class="col-md-5" style="margin-top: 75px;">
-                <?php
-                if ($data['sp_quangcao'] != null) {
-                    echo '<img src="/nguyenanhthoai/fontend/images/hinhquangcao/' . $data['sp_hinhchitiet'] . ' "class="hinh-sp-laptop" >';
-                } else {
-                    echo '<img src="/nguyenanhthoai/fontend/images/laptop/' . $data['sp_hinhchitiet'] . ' " class="hinh-sp-laptop">';
-                }
-                ?>
-            </div>
-            <!-- end hình sản phẩm -->
-            <!-- Thông tin sp -->
-            <div class="col-md-7 thongtin-sp" style="margin-top: 75px;">
-                <h1 class="tieude-sp display-4 mt-2"><?= $data['laptop_ten']; ?></h1>
-                <hr>
-                <h1 style="font-size:26px; margin-left: 10px;">Thông số kỹ thuật</h1>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        CPU:
-                    </div>
-                    <div class="col-md-8">
-                        <?= $data['laptop_cpu']; ?>
-                    </div>
+        <form action="xulymuahang.php?sp_ma=<?= $data['sp_ma']; ?>" method="POST" name="frmSanPham">
+            <div class="row main-sanpham">
+                <!-- hình sản phẩm -->
+                <div class="col-md-5" style="margin-top: 75px;">
+                    <?php
+                    if ($data['sp_quangcao'] != null) {
+                        echo '<img src="/nguyenanhthoai/fontend/images/hinhquangcao/' . $data['sp_hinhchitiet'] . ' "class="hinh-sp-laptop" >';
+                    } else {
+                        echo '<img src="/nguyenanhthoai/fontend/images/laptop/' . $data['sp_hinhchitiet'] . ' " class="hinh-sp-laptop">';
+                    }
+                    ?>
                 </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        RAM:
+                <!-- end hình sản phẩm -->
+                <!-- Thông tin sp -->
+                <div class="col-md-7 thongtin-sp" style="margin-top: 75px;">
+                    <h1 class="tieude-sp display-4 mt-2"><?= $data['laptop_ten']; ?></h1>
+                    <hr>
+                    <h1 style="font-size:26px; margin-left: 10px;">Thông số kỹ thuật</h1>
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            CPU:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['laptop_cpu']; ?>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <?= $data['laptop_ram']; ?>
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            RAM:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['laptop_ram']; ?>
+                        </div>
                     </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Ổ cứng:
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Ổ cứng:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['laptop_ocung']; ?>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <?= $data['laptop_ocung']; ?>
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Màn hình:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['laptop_manhinh']; ?>
+                        </div>
                     </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Màn hình:
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Card màn hình:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['laptop_cardmanhinh']; ?>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <?= $data['laptop_manhinh']; ?>
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Cổng kết nối:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['laptop_congketnoi']; ?>
+                        </div>
                     </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Card màn hình:
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Hệ điều hành:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['laptop_hedieuhanh']; ?>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <?= $data['laptop_cardmanhinh']; ?>
-                    </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Cổng kết nối:
-                    </div>
-                    <div class="col-md-8">
-                        <?= $data['laptop_congketnoi']; ?>
-                    </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Hệ điều hành:
-                    </div>
-                    <div class="col-md-8">
-                        <?= $data['laptop_hedieuhanh']; ?>
-                    </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Thiết kế:
-                    </div>
-                    <div class="col-md-8">
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Thiết kế:
+                        </div>
+                        <div class="col-md-8">
 
-                        <?= $data['laptop_thietke']; ?>
+                            <?= $data['laptop_thietke']; ?>
+                        </div>
                     </div>
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Kích thước:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['laptop_kichthuoc']; ?>
+                        </div>
+                    </div>
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Thời điểm ra mắt:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['laptop_ramat']; ?>
+                        </div>
+                    </div>
+                    <div class="row kt-sp">
+                        <span class="gia-sp-goc">
+                            <?= number_format($data['sp_gia'], 0, ".", ",") . ' vnđ'; ?>
+                        </span>&emsp;
+                        <span class="gia-sp-giam">
+                            <del>
+                                <?php
+                                if ((($data['sp_giacu'] != null) && ($data['sp_giacu'] > $data['sp_gia'])))
+                                    echo number_format($data['sp_giacu'], 0, ".", ",") . ' vnđ';
+                                ?>
+                            </del>
+                        </span>
+                    </div>
+                    <div class="row kt-sp">
+                        <label for="soluong">Số lượng đặt mua:</label>
+                        <button type="button" id="btn-Tru" name="btn-Tru" style="width:50px;" onclick="tru()">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <input type="number" min="1" max="9" class="form-control" id="soluongmua" name="soluongmua" style="width:100px; text-align:center;" value="1">
+                        <button type="button" id="btn-Cong" name="btn-Cong" style="width:50px;" onclick="cong()">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <button type="submit" class="btn btn-warning btn-lg btn-block mb-2 mua-ngay">MUA NGAY</button>
                 </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Kích thước:
-                    </div>
-                    <div class="col-md-8">
-                        <?= $data['laptop_kichthuoc']; ?>
-                    </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Thời điểm ra mắt:
-                    </div>
-                    <div class="col-md-8">
-                        <?= $data['laptop_ramat']; ?>
-                    </div>
-                </div>
-                <div class="row kt-sp">
-                    <span class="gia-sp-goc">
-                        <?= number_format($data['sp_gia'], 0, ".", ",") . ' vnđ'; ?>
-                    </span>&emsp;
-                    <span class="gia-sp-giam">
-                        <del>
-                            <?php
-                            if ((($data['sp_giacu'] == null) || ($data['sp_giacu'] > $data['sp_gia'])))
-                                echo number_format($data['sp_giacu'], 0, ".", ",") . ' vnđ';
-                            ?>
-                        </del>
-                    </span>
-                </div>
-                <button type="button" onclick=muaHang() class="btn btn-warning btn-lg btn-block mb-2 mua-ngay">MUA NGAY</button>
+                <!-- end thông tin sp -->
             </div>
-            <!-- end thông tin sp -->
-        </div>
+        </form>
     </div>
     <div class="container-fluid">
         <?php include_once(__DIR__ . '/../../backend/layouts/partials/footer.php') ?>
     </div>
 </body>
+
+<script>
+    var dem = 1;
+
+    function cong() {
+        dem = dem + 1;
+        if (dem < 10) {
+            document.getElementById("soluongmua").value = dem;
+
+        } else {
+            dem = 9;
+        }
+    }
+
+    function tru() {
+        dem = dem - 1;
+        if (dem > 0) {
+            document.getElementById("soluongmua").value = dem;
+        } else {
+            dem = 1;
+        }
+    }
+</script>
 
 </html>

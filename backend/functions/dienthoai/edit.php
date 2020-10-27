@@ -160,7 +160,6 @@ if (session_id() === '') {
             <div class="form-group">
                 <label for="nsx_ma">Nhà sản xuất</label>
                 <select class="form-control" id="nsx_ma" name="nsx_ma">
-
                     <?php foreach ($dataNhaSanXuat as $nhasanxuat) : ?>
                         <?php if ($nhasanxuat['nsx_ma'] == $dataSanPham['nsx_ma']) : ?>
                             <option value="<?= $nhasanxuat['nsx_ma'] ?>" selected><?= $nhasanxuat['nsx_ten'] ?></option>
@@ -170,7 +169,6 @@ if (session_id() === '') {
                     <?php endforeach; ?>
                 </select>
             </div>
-
             <div class="form-group">
                 <label for="dt_manhinh">Màn Hình</label>
                 <input type="text" class="form-control" id="dt_manhinh" name="dt_manhinh" placeholder="Màn hình điện thoại" value="<?= $dataDienthoai['dt_manhinh'] ?>">
@@ -228,7 +226,7 @@ if (session_id() === '') {
                     <button class="btn btn-primary btn-lg btn-block" name="btnSave">Lưu dữ liệu</button>
                 </div>
                 <div class="col-md-7 text-right">
-                    <a href="index.php"><button type="button" class="btn btn-link">Quay Về</button></a>
+                    <a href="index.php"><button type="button" class="btn btn-info btn-md">Quay Về</button></a>
                 </div>
             </div>
         </form>
@@ -239,23 +237,24 @@ if (session_id() === '') {
             if ($loi) {
                 return;
             }
-            $sp_ten = $_POST["sp_ten"];
-            $sp_giacu = $_POST["sp_giacu"];
-            $sp_gia = $_POST["sp_gia"];
-            $sp_ngaycapnhat = $_POST["sp_ngaycapnhat"];
-            $sp_soluong = $_POST["sp_soluong"];
-            $nsx_ma = $_POST["nsx_ma"];
-            $km_ma = $_POST["km_ma"];
-            $dt_manhinh = $_POST["dt_manhinh"];
-            $dt_hedieuhanh = $_POST["dt_hedieuhanh"];
-            $dt_camerasau = $_POST["dt_camerasau"];
-            $dt_cameratruoc = $_POST["dt_cameratruoc"];
-            $dt_cpu = $_POST["dt_cpu"];
-            $dt_ram = $_POST["dt_ram"];
-            $dt_bonhotrong = $_POST["dt_bonhotrong"];
-            $dt_thenho = $_POST["dt_thenho"];
-            $dt_sim = $_POST["dt_sim"];
-            $dt_dungluongpin = $_POST["dt_dungluongpin"];
+            
+            $sp_ten = htmlentities($_POST["sp_ten"]);
+            $sp_giacu = htmlentities($_POST["sp_giacu"]);
+            $sp_gia = htmlentities($_POST["sp_gia"]);
+            $sp_ngaycapnhat =htmlentities($_POST["sp_ngaycapnhat"]);
+            $sp_soluong = htmlentities($_POST["sp_soluong"]);
+            $nsx_ma = htmlentities($_POST["nsx_ma"]);
+            $km_ma = htmlentities($_POST["km_ma"]);
+            $dt_manhinh = htmlentities($_POST["dt_manhinh"]);
+            $dt_hedieuhanh = htmlentities($_POST["dt_hedieuhanh"]);
+            $dt_camerasau = htmlentities($_POST["dt_camerasau"]);
+            $dt_cameratruoc = htmlentities($_POST["dt_cameratruoc"]);
+            $dt_cpu = htmlentities($_POST["dt_cpu"]);
+            $dt_ram = htmlentities($_POST["dt_ram"]);
+            $dt_bonhotrong = htmlentities($_POST["dt_bonhotrong"]);
+            $dt_thenho = htmlentities($_POST["dt_thenho"]);
+            $dt_sim = htmlentities($_POST["dt_sim"]);
+            $dt_dungluongpin = htmlentities($_POST["dt_dungluongpin"]);
 
             if (isset($_FILES['sp_hinh'])) {
                 $upload_dir_sp_hinh = __DIR__ . "/../../../fontend/images/dienthoai/";

@@ -118,117 +118,152 @@ $data = $dataSanPhamHot[0];
 <body>
     <?php include_once(__DIR__ . '/../layouts/partials/header.php') ?>
     <div class="container-fluid mt-3 main-sp">
-        <div class="row main-sanpham">
-            <!-- hình sản phẩm -->
-            <div class="col-md-5" style="margin-top: 75px;"><img src="/nguyenanhthoai/fontend/images/tablet/<?= $data['sp_hinhchitiet']; ?>" class="hinh-sp-tablet"></div>
-            <!-- end hình sản phẩm -->
-            <!-- Thông tin sp -->
-            <div class="col-md-7 thongtin-sp" style="margin-top: 75px;">
-                <h1 class="tieude-sp display-4 mt-2"><?= $data['tablet_ten']; ?></h1>
-                <hr>
-                <h1 style="font-size:26px; margin-left: 10px;">Thông số kỹ thuật</h1>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Màn hình:
+        <form action="xulymuahang.php?sp_ma=<?= $data['sp_ma']; ?>" method="POST" name="frmSanPham">
+            <div class="row main-sanpham">
+                <!-- hình sản phẩm -->
+                <div class="col-md-5" style="margin-top: 75px;"><img src="/nguyenanhthoai/fontend/images/tablet/<?= $data['sp_hinhchitiet']; ?>" class="hinh-sp-tablet"></div>
+                <!-- end hình sản phẩm -->
+                <!-- Thông tin sp -->
+                <div class="col-md-7 thongtin-sp" style="margin-top: 75px;">
+                    <h1 class="tieude-sp display-4 mt-2"><?= $data['tablet_ten']; ?></h1>
+                    <hr>
+                    <h1 style="font-size:26px; margin-left: 10px;">Thông số kỹ thuật</h1>
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Màn hình:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['tablet_manhinh']; ?>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <?= $data['tablet_manhinh']; ?>
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Hệ điều hành:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['tablet_hedieuhanh']; ?>
+                        </div>
                     </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Hệ điều hành:
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            CPU:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['tablet_cpu']; ?>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <?= $data['tablet_hedieuhanh']; ?>
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            RAM:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['tablet_ram']; ?>
+                        </div>
                     </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        CPU:
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Bộ nhớ trong:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['tablet_bonhotrong']; ?>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <?= $data['tablet_cpu']; ?>
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Camera sau:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['tablet_camerasau']; ?>
+                        </div>
                     </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        RAM:
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Camera trước:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['tablet_cameratruoc']; ?>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <?= $data['tablet_ram']; ?>
-                    </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Bộ nhớ trong:
-                    </div>
-                    <div class="col-md-8">
-                        <?= $data['tablet_bonhotrong']; ?>
-                    </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Camera sau:
-                    </div>
-                    <div class="col-md-8">
-                        <?= $data['tablet_camerasau']; ?>
-                    </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Camera trước:
-                    </div>
-                    <div class="col-md-8">
-                        <?= $data['tablet_cameratruoc']; ?>
-                    </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Kết nối mạng:
-                    </div>
-                    <div class="col-md-8">
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Kết nối mạng:
+                        </div>
+                        <div class="col-md-8">
 
-                        <?= $data['tablet_ketnoimang']; ?>
+                            <?= $data['tablet_ketnoimang']; ?>
+                        </div>
                     </div>
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Đàm thoại:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['tablet_damthoai']; ?>
+                        </div>
+                    </div>
+                    <div class="row kt-sp">
+                        <div class="col-md-4">
+                            Trọng lượng:
+                        </div>
+                        <div class="col-md-8">
+                            <?= $data['tablet_trongluong']; ?>
+                        </div>
+                    </div>
+                    <div class="row kt-sp">
+                        <span class="gia-sp-goc">
+                            <?= number_format($data['sp_gia'], 0, ".", ",") . ' vnđ'; ?>
+                        </span>&emsp;
+                        <span class="gia-sp-giam">
+                            <del>
+                                <?php
+                                if ((($data['sp_giacu'] != null) && ($data['sp_giacu'] > $data['sp_gia'])))
+                                    echo number_format($data['sp_giacu'], 0, ".", ",") . ' vnđ';
+                                ?>
+                            </del>
+                        </span>
+                    </div>
+
+                    <div class="row kt-sp">
+                        <label for="soluong">Số lượng đặt mua:</label>
+                        <button type="button" id="btn-Tru" name="btn-Tru" style="width:50px;" onclick="tru()">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <input type="number" min="1" max="9" class="form-control" id="soluongmua" name="soluongmua" style="width:100px; text-align:center;" value="1">
+                        <button type="button" id="btn-Cong" name="btn-Cong" style="width:50px;" onclick="cong()">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <button type="submit" class="btn btn-warning btn-lg btn-block mb-2 mua-ngay">MUA NGAY</button>
                 </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Đàm thoại:
-                    </div>
-                    <div class="col-md-8">
-                        <?= $data['tablet_damthoai']; ?>
-                    </div>
-                </div>
-                <div class="row kt-sp">
-                    <div class="col-md-4">
-                        Trọng lượng:
-                    </div>
-                    <div class="col-md-8">
-                        <?= $data['tablet_trongluong']; ?>
-                    </div>
-                </div>
-                <div class="row kt-sp">
-                    <span class="gia-sp-goc">
-                        <?= number_format($data['sp_gia'], 0, ".", ",") . ' vnđ'; ?>
-                    </span>&emsp;
-                    <span class="gia-sp-giam">
-                        <del>
-                            <?php
-                            if ((($data['sp_giacu'] == null) || ($data['sp_giacu'] > $data['sp_gia'])))
-                                echo number_format($data['sp_giacu'], 0, ".", ",") . ' vnđ';
-                            ?>
-                        </del>
-                    </span>
-                </div>
-                <button type="button" onclick=muaHang() class="btn btn-warning btn-lg btn-block mb-2 mua-ngay">MUA NGAY</button>
+                <!-- end thông tin sp -->
             </div>
-            <!-- end thông tin sp -->
-        </div>
+        </form>
     </div>
     <div class="container-fluid">
         <?php include_once(__DIR__ . '/../../backend/layouts/partials/footer.php') ?>
     </div>
 </body>
+<script>
+    var dem = 1;
+
+    function cong() {
+        dem = dem + 1;
+        if (dem < 10) {
+            document.getElementById("soluongmua").value = dem;
+
+        } else {
+            dem = 9;
+        }
+    }
+
+    function tru() {
+        dem = dem - 1;
+        if (dem > 0) {
+            document.getElementById("soluongmua").value = dem;
+        } else {
+            dem = 1;
+        }
+    }
+</script>
 
 </html>

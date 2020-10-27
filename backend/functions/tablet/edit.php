@@ -228,7 +228,7 @@ if (session_id() === '') {
                     <button class="btn btn-primary btn-lg btn-block" name="btnSave">Lưu dữ liệu</button>
                 </div>
                 <div class="col-md-7 text-right">
-                    <a href="index.php"><button type="button" class="btn btn-link">Quay Về</button></a>
+                    <a href="index.php"><button type="button" class="btn btn-info btn-md">Quay Về</button></a>
                 </div>
             </div>
         </form>
@@ -239,23 +239,24 @@ if (session_id() === '') {
             if ($loi) {
                 return;
             }
-            $sp_ten = $_POST["sp_ten"];
-            $sp_giacu = $_POST["sp_giacu"];
-            $sp_gia = $_POST["sp_gia"];
-            $sp_ngaycapnhat = $_POST["sp_ngaycapnhat"];
-            $sp_soluong = $_POST["sp_soluong"];
-            $nsx_ma = $_POST["nsx_ma"];
-            $km_ma = $_POST["km_ma"];
-            $tablet_manhinh = $_POST["tablet_manhinh"];
-            $tablet_hedieuhanh = $_POST["tablet_hedieuhanh"];
-            $tablet_camerasau = $_POST["tablet_camerasau"];
-            $tablet_cameratruoc = $_POST["tablet_cameratruoc"];
-            $tablet_cpu = $_POST["tablet_cpu"];
-            $tablet_ram = $_POST["tablet_ram"];
-            $tablet_bonhotrong = $_POST["tablet_bonhotrong"];
-            $tablet_ketnoimang = $_POST["tablet_ketnoimang"];
-            $tablet_damthoai = $_POST["tablet_damthoai"];
-            $tablet_trongluong = $_POST["tablet_trongluong"];
+
+              $sp_ten = htmlentities($_POST["sp_ten"]);
+            $sp_giacu = htmlentities($_POST["sp_giacu"]);
+            $sp_gia = htmlentities($_POST["sp_gia"]);
+            $sp_ngaycapnhat = htmlentities($_POST["sp_ngaycapnhat"]);
+            $sp_soluong = htmlentities($_POST["sp_soluong"]);
+            $nsx_ma = htmlentities($_POST["nsx_ma"]);
+            $km_ma = htmlentities($_POST["km_ma"]);
+            $tablet_manhinh = htmlentities($_POST["tablet_manhinh"]);
+            $tablet_hedieuhanh = htmlentities($_POST["tablet_hedieuhanh"]);
+            $tablet_camerasau = htmlentities($_POST["tablet_camerasau"]);
+            $tablet_cameratruoc = htmlentities($_POST["tablet_cameratruoc"]);
+            $tablet_cpu = htmlentities($_POST["tablet_cpu"]);
+            $tablet_ram = htmlentities($_POST["tablet_ram"]);
+            $tablet_ketnoimang = htmlentities($_POST["tablet_ketnoimang"]);
+            $tablet_damthoai = htmlentities($_POST["tablet_damthoai"]);
+            $tablet_bonhotrong = htmlentities($_POST["tablet_bonhotrong"]);
+            $tablet_trongluong = htmlentities($_POST["tablet_trongluong"]);
 
             if (isset($_FILES['sp_hinh'])) {
                 $upload_dir_sp_hinh = __DIR__ . "/../../../fontend/images/tablet/";
